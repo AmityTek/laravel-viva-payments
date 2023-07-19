@@ -1,6 +1,6 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Responses;
+namespace AmityTek\VivaPayments\Responses;
 
 use Sebdesign\VivaPayments\Enums\TransactionStatus;
 use Sebdesign\VivaPayments\Enums\TransactionType;
