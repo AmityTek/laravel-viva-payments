@@ -1,25 +1,25 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test\Functional\Services\ISV;
+namespace AmityTek\VivaPayments\Test\Functional\Services\ISV;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Requests\CreatePaymentOrder;
-use Sebdesign\VivaPayments\Requests\Customer;
-use Sebdesign\VivaPayments\Test\TestCase;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Requests\CreatePaymentOrder;
+use AmityTek\VivaPayments\Requests\Customer;
+use AmityTek\VivaPayments\Test\TestCase;
+use AmityTek\VivaPayments\VivaException;
 
 /**
- * @covers \Sebdesign\VivaPayments\Client
- * @covers \Sebdesign\VivaPayments\Services\ISV
- * @covers \Sebdesign\VivaPayments\Services\ISV\Order
+ * @covers \AmityTek\VivaPayments\Client
+ * @covers \AmityTek\VivaPayments\Services\ISV
+ * @covers \AmityTek\VivaPayments\Services\ISV\Order
  */
 class OrderTest extends TestCase
 {
     /**
      * @test
      * @group functional
-     * @covers \Sebdesign\VivaPayments\Requests\CreatePaymentOrder
+     * @covers \AmityTek\VivaPayments\Requests\CreatePaymentOrder
      *
      * @throws GuzzleException
      * @throws VivaException

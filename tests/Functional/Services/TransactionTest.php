@@ -1,15 +1,15 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test\Functional\Services;
+namespace AmityTek\VivaPayments\Test\Functional\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Requests\CreateRecurringTransaction;
-use Sebdesign\VivaPayments\Test\TestCase;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Requests\CreateRecurringTransaction;
+use AmityTek\VivaPayments\Test\TestCase;
+use AmityTek\VivaPayments\VivaException;
 
-/** @covers \Sebdesign\VivaPayments\Services\Transaction */
+/** @covers \AmityTek\VivaPayments\Services\Transaction */
 class TransactionTest extends TestCase
 {
     /**
@@ -32,7 +32,7 @@ class TransactionTest extends TestCase
     /**
      * @test
      * @group functional
-     * @covers \Sebdesign\VivaPayments\Requests\CreateRecurringTransaction
+     * @covers \AmityTek\VivaPayments\Requests\CreateRecurringTransaction
      *
      * @throws GuzzleException
      * @throws VivaException

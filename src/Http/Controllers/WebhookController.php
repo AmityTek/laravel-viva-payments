@@ -1,16 +1,16 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Http\Controllers;
+namespace AmityTek\VivaPayments\Http\Controllers;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Sebdesign\VivaPayments\Events\TransactionFailed;
-use Sebdesign\VivaPayments\Events\TransactionPaymentCreated;
-use Sebdesign\VivaPayments\Events\WebhookEvent;
-use Sebdesign\VivaPayments\Services\Webhook;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Events\TransactionFailed;
+use AmityTek\VivaPayments\Events\TransactionPaymentCreated;
+use AmityTek\VivaPayments\Events\WebhookEvent;
+use AmityTek\VivaPayments\Services\Webhook;
+use AmityTek\VivaPayments\VivaException;
 
 class WebhookController extends Controller
 {
@@ -22,7 +22,7 @@ class WebhookController extends Controller
      * @throws GuzzleException
      * @throws VivaException
      */
-    public function verify(Webhook $webhook): JsonResponse
+    public function verify(Webhook $webhook): JsonReponse
     {
         return response()->json($webhook->getVerificationKey());
     }

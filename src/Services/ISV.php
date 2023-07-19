@@ -1,8 +1,8 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Services;
+namespace AmityTek\VivaPayments\Services;
 
-use Sebdesign\VivaPayments\Client;
+use AmityTek\VivaPayments\Client;
 
 class ISV
 {

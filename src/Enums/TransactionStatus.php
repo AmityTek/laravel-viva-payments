@@ -1,6 +1,6 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Enums;
+namespace AmityTek\VivaPayments\Enums;
 
 /**
  * @see https://developer.vivawallet.com/integration-reference/response-codes/#statusid-parameter

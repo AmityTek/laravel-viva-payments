@@ -1,6 +1,6 @@
 <?php
 
-namespace Sebdesign\VivaPayments;
+namespace AmityTek\VivaPayments;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
@@ -9,7 +9,7 @@ use GuzzleHttp\RequestOptions;
 use JsonException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
-use Sebdesign\VivaPayments\Enums\Environment;
+use AmityTek\VivaPayments\Enums\Environment;
 
 class Client
 {

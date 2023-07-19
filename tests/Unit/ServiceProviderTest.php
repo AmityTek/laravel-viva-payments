@@ -1,13 +1,13 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test\Unit;
+namespace AmityTek\VivaPayments\Test\Unit;
 
-use Sebdesign\VivaPayments\Client;
-use Sebdesign\VivaPayments\Services\OAuth;
-use Sebdesign\VivaPayments\Test\TestCase;
-use Sebdesign\VivaPayments\VivaPaymentsServiceProvider;
+use AmityTek\VivaPayments\Client;
+use AmityTek\VivaPayments\Services\OAuth;
+use AmityTek\VivaPayments\Test\TestCase;
+use AmityTek\VivaPayments\VivaPaymentsServiceProvider;
 
-/** @covers \Sebdesign\VivaPayments\VivaPaymentsServiceProvider */
+/** @covers \AmityTek\VivaPayments\VivaPaymentsServiceProvider */
 class ServiceProviderTest extends TestCase
 {
     /**

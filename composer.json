@@ -1,5 +1,5 @@
 {
-    "name": "sebdesign/laravel-viva-payments",
+    "name": "amitytek/laravel-viva-payments",
     "description": "A Laravel package for integrating the Viva Payments gateway",
     "type": "library",
     "keywords": [
@@ -12,13 +12,13 @@
         "viva",
         "webhooks"
     ],
-    "homepage": "https://github.com/sebdesign/laravel-viva-payments",
+    "homepage": "https://github.com/AmityTek/laravel-viva-payments",
     "license": "MIT",
     "authors": [
         {
-            "name": "Sébastien Nikolaou",
-            "email": "info@sebdesign.eu",
-            "homepage": "https://github.com/sebdesign",
+            "name": "Alex Fullstack",
+            "email": "contact@alex-fullstack.com",
+            "homepage": "https://github.com/amitytek",
             "role": "Developer"
         }
     ],
@@ -39,12 +39,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Sebdesign\\VivaPayments\\": "src"
+            "AmityTek\\VivaPayments\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sebdesign\\VivaPayments\\Test\\": "tests"
+            "AmityTek\\VivaPayments\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sebdesign\\VivaPayments\\VivaPaymentsServiceProvider"
+                "AmityTek\\VivaPayments\\VivaPaymentsServiceProvider"
             ],
             "aliases": {
-                "Viva": "Sebdesign\\VivaPayments\\Facades\\Viva"
+                "Viva": "AmityTek\\VivaPayments\\Facades\\Viva"
             }
         }
     }

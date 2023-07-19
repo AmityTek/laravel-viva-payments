@@ -1,15 +1,15 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test\Unit;
+namespace AmityTek\VivaPayments\Test\Unit;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Response;
-use Sebdesign\VivaPayments\Client;
-use Sebdesign\VivaPayments\Enums\Environment;
-use Sebdesign\VivaPayments\Test\TestCase;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Client;
+use AmityTek\VivaPayments\Enums\Environment;
+use AmityTek\VivaPayments\Test\TestCase;
+use AmityTek\VivaPayments\VivaException;
 
-/** @covers \Sebdesign\VivaPayments\Client */
+/** @covers \AmityTek\VivaPayments\Client */
 class ClientTest extends TestCase
 {
     /**
@@ -175,7 +175,7 @@ class ClientTest extends TestCase
     /**
      * @test
      * @group unit
-     * @covers \Sebdesign\VivaPayments\VivaException
+     * @covers \AmityTek\VivaPayments\VivaException
      *
      * @throws GuzzleException
      * @throws VivaException
@@ -193,7 +193,7 @@ class ClientTest extends TestCase
     /**
      * @test
      * @group unit
-     * @covers \Sebdesign\VivaPayments\VivaException
+     * @covers \AmityTek\VivaPayments\VivaException
      *
      * @throws GuzzleException
      * @throws VivaException
@@ -235,7 +235,7 @@ class ClientTest extends TestCase
     /**
      * @test
      * @group unit
-     * @covers \Sebdesign\VivaPayments\VivaException
+     * @covers \AmityTek\VivaPayments\VivaException
      *
      * @throws GuzzleException
      * @throws VivaException

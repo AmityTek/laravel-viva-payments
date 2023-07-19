@@ -1,10 +1,10 @@
 # Viva Payments for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sebdesign/laravel-viva-payments.svg?style=flat-square)](https://packagist.org/packages/sebdesign/laravel-viva-payments)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/AmityTek/laravel-viva-payments.svg?style=flat-square)](https://packagist.org/packages/AmityTek/laravel-viva-payments)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/github/workflow/status/sebdesign/laravel-viva-payments/PHP%20Tests?style=flat-square)](https://github.com/sebdesign/laravel-viva-payments/actions)
-[![Quality Score](https://img.shields.io/scrutinizer/g/sebdesign/laravel-viva-payments.svg?style=flat-square)](https://scrutinizer-ci.com/g/sebdesign/laravel-viva-payments)
-[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/sebdesign/laravel-viva-payments.svg?style=flat-square)](https://scrutinizer-ci.com/g/sebdesign/laravel-viva-payments)
+[![Build Status](https://img.shields.io/github/workflow/status/AmityTek/laravel-viva-payments/PHP%20Tests?style=flat-square)](https://github.com/AmityTek/laravel-viva-payments/actions)
+[![Quality Score](https://img.shields.io/scrutinizer/g/AmityTek/laravel-viva-payments.svg?style=flat-square)](https://scrutinizer-ci.com/g/AmityTek/laravel-viva-payments)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/AmityTek/laravel-viva-payments.svg?style=flat-square)](https://scrutinizer-ci.com/g/AmityTek/laravel-viva-payments)
 
 [![VivaPayments logo](https://www.vivawallet.com/assets/vw-logo.svg "Viva Wallet logo")](https://www.vivawallet.com/)
 
@@ -36,7 +36,7 @@ This package requires PHP 8.1 and Laravel 9.0 or higher, and uses Guzzle 7.0 to 
 | ~1.0                      | ~5.0       | ~5.0    |
 
 ```
-composer require sebdesign/laravel-viva-payments
+composer require AmityTek/laravel-viva-payments
 ```
 
 #### Service Provider
@@ -73,7 +73,7 @@ The `environment` can be either `production` or `demo`.
 
 > Read more about the Smart Checkout process on the Developer portal: https://developer.vivawallet.com/smart-checkout/
 
-The `\Sebdesign\VivaPayments\Facades\Viva` facade provides all the methods needed to interact with the Smart Checkout integration.
+The `\AmityTek\VivaPayments\Facades\Viva` facade provides all the methods needed to interact with the Smart Checkout integration.
 
 The following guide will walk you through the necessary steps:
 
@@ -82,7 +82,7 @@ The following guide will walk you through the necessary steps:
 The amount requested in cents is required. All the other parameters are optional. Check out the [request body schema](https://developer.vivawallet.com/apis-for-payments/payment-api/#tag/Payments/paths/~1checkout~1v2~1orders/post).
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 $orderCode = Viva::orders()->create(
     order: new CreatePaymentOrder(amount: 1000),
@@ -92,7 +92,7 @@ $orderCode = Viva::orders()->create(
 #### Redirect to Smart Checkout
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 $redirectUrl = Viva::orders()->redirectUrl(
     ref: $orderCode,
@@ -106,7 +106,7 @@ return redirect()->away(path: $redirectUrl);
 #### Verify payment
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 $response = Viva::transactions()->retrieve(transactionId: request('t'));
 ```
@@ -120,11 +120,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Sebdesign\VivaPayments\Enums\TransactionStatus;
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Requests\CreatePaymentOrder;
-use Sebdesign\VivaPayments\Requests\Customer;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Enums\TransactionStatus;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Requests\CreatePaymentOrder;
+use AmityTek\VivaPayments\Requests\Customer;
+use AmityTek\VivaPayments\VivaException;
 
 class CheckoutController extends Controller
 {
@@ -226,8 +226,8 @@ To handle any request from Viva Wallet, you may listen to the `WebhookEvent`.
 According to the `EventTypeId`, you can handle any event.
 
 ```php
-use Sebdesign\VivaPayments\Enums\WebhookEventType;
-use Sebdesign\VivaPayments\Events\WebhookEvent;
+use AmityTek\VivaPayments\Enums\WebhookEventType;
+use AmityTek\VivaPayments\Events\WebhookEvent;
 
 class EventServiceProvider
 {
@@ -262,9 +262,9 @@ The class of the object depends on the notification type:
 In addition, the `TransactionPaymentCreated` and `TransactionFailed` events are dispatched. You can listen to these specific events instead of listening to the `WebhookEvent`.
 
 ```php
-use Sebdesign\VivaPayments\Enums\WebhookEventType;
-use Sebdesign\VivaPayments\Events\TransactionFailed;
-use Sebdesign\VivaPayments\Events\TransactionPaymentCreated;
+use AmityTek\VivaPayments\Enums\WebhookEventType;
+use AmityTek\VivaPayments\Events\TransactionFailed;
+use AmityTek\VivaPayments\Events\TransactionPaymentCreated;
 
 class EventServiceProvider
 {
@@ -306,9 +306,9 @@ All methods accept a `$guzzleOptions` array argument as their last parameter. Th
 > See: https://developer.vivawallet.com/api-reference-guide/payment-api/#tag/Payments/paths/~1api~1orders~1{orderCode}/get
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Requests\CreatePaymentOrder;
-use Sebdesign\VivaPayments\Requests\Customer;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Requests\CreatePaymentOrder;
+use AmityTek\VivaPayments\Requests\Customer;
 
 $orderCode = Viva::orders()->create(
     order: new CreatePaymentOrder(
@@ -350,7 +350,7 @@ $orderCode = Viva::orders()->create(
 > See: https://developer.vivawallet.com/smart-checkout/smart-checkout-integration/#step-2-redirect-the-customer-to-smart-checkout-to-pay-the-payment-order
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 $url = Viva::orders()->redirectUrl(
     ref: $orderCode,
@@ -366,7 +366,7 @@ $url = Viva::orders()->redirectUrl(
 > See: https://developer.vivawallet.com/apis-for-payments/payment-api/#tag/Transactions/paths/~1checkout~1v2~1transactions~1{transactionId}/get
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 $transaction = Viva::transactions()->retrieve(
     transactionId: 'c90d4902-6245-449f-b2b0-51d99cd09cfe',
@@ -379,8 +379,8 @@ $transaction = Viva::transactions()->retrieve(
 > See: https://developer.vivawallet.com/api-reference-guide/payment-api/#tag/Transactions/paths/~1api~1transactions~1{Id}/post
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Requests\CreateRecurringTransaction;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Requests\CreateRecurringTransaction;
 
 $response = Viva::transactions()->createRecurring(
     transactionId: '252b950e-27f2-4300-ada1-4dedd7c17904',
@@ -406,7 +406,7 @@ You don't need to call this method, because the client requests the access token
 However, you can specify the client credentials at runtime if you want.
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 Viva::withOAuthCredentials(
     clientId: 'client_id',
@@ -418,7 +418,7 @@ If you need to request access tokens manually, you can use the `requestToken` me
 This method returns the token as an `AccessToken` object.
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 // Using `client_id` and `client_secret` from `config/services.php`:
 $token = Viva::oauth()->requestToken();
@@ -436,7 +436,7 @@ $token = Viva::oauth()->requestToken(
 If you are storing the token somewhere, e.g. in your database or in the cache, you can set the access token string on the client to be used as a Bearer token.
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 Viva::withToken(token: 'eyJhbGciOiJSUzI1...');
 ```
@@ -448,7 +448,7 @@ Viva::withToken(token: 'eyJhbGciOiJSUzI1...');
 > See: https://developer.vivawallet.com/apis-for-payments/payment-api/#tag/Transactions/paths/~1acquiring~1v1~1cards~1tokens/post
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 $cardToken = Viva::cards()->createToken(
     transactionId: '6cffe5bf-909c-4d69-b6dc-2bef1a6202f7',
@@ -463,7 +463,7 @@ $cardToken = Viva::cards()->createToken(
 > See: https://developer.vivawallet.com/webhooks-for-payments/#generate-a-webhook-verification-key
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 $key = Viva::webhooks()->getVerificationKey(
     guzzleOptions: [],
@@ -481,9 +481,9 @@ The ISV Payment API methods are available through the `Viva::isv()` service.
 > See: https://developer.vivawallet.com/isv-partner-program/payment-isv-api/#tag/Payments/paths/~1checkout~1v2~1isv~1orders/post
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Requests\CreatePaymentOrder;
-use Sebdesign\VivaPayments\Requests\Customer;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Requests\CreatePaymentOrder;
+use AmityTek\VivaPayments\Requests\Customer;
 
 $orderCode = Viva::isv()->orders()->create(
     order: new CreatePaymentOrder(
@@ -528,7 +528,7 @@ $orderCode = Viva::isv()->orders()->create(
 > See: https://developer.vivawallet.com/isv-partner-program/payment-isv-api/#tag/Retrieve-Transactions/paths/~1checkout~1v2~1isv~1transactions~1{transactionId}?merchantId={merchantId}/get
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Facades\Viva;
 
 $transaction = Viva::isv()->transactions()->retrieve(
     transactionId: 'c90d4902-6245-449f-b2b0-51d99cd09cfe',
@@ -541,8 +541,8 @@ $transaction = Viva::isv()->transactions()->retrieve(
 > See: https://developer.vivawallet.com/isv-partner-program/payment-isv-api/#tag/Recurring-Payments/paths/~1api~1transactions~1{id}/post
 
 ```php
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Requests\CreateRecurringTransaction;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Requests\CreateRecurringTransaction;
 
 Viva::withBasicAuthCredentials(
     config('services.viva.isv_partner_id').':'.config('services.viva.merchant_id'),
@@ -565,7 +565,7 @@ $transaction = Viva::isv()->transactions()->createRecurring(
 
 ## Exceptions
 
-When the VivaPayments API returns an error, a `Sebdesign\VivaPayments\VivaException` is thrown.
+When the VivaPayments API returns an error, a `AmityTek\VivaPayments\VivaException` is thrown.
 
 For any other HTTP error a `GuzzleHttp\Exception\ClientException` is thrown.
 

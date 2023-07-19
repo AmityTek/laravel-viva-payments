@@ -1,13 +1,13 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Services;
+namespace AmityTek\VivaPayments\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\RequestOptions;
-use Sebdesign\VivaPayments\Client;
-use Sebdesign\VivaPayments\Requests;
-use Sebdesign\VivaPayments\Responses;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Client;
+use AmityTek\VivaPayments\Requests;
+use AmityTek\VivaPayments\Responses;
+use AmityTek\VivaPayments\VivaException;
 
 class Transaction
 {
@@ -65,5 +65,30 @@ class Transaction
         );
 
         return Responses\RecurringTransaction::create($response);
+    }
+
+
+    /**
+     * Retrieve transaction.
+     *
+     * @see https://developer.vivawallet.com/apis-for-payments/payment-api/#tag/Transactions/paths/~1checkout~1v2~1transactions~1{transactionId}/get
+     *
+     * @param  array<string,mixed>  $guzzleOptions  Additional parameters for the Guzzle client
+     *
+     * @throws GuzzleException
+     * @throws VivaException
+     */
+    public function retrieveAll(array $guzzleOptions = []): Responses\Transaction
+    {
+        /** @phpstan-var TransactionArray */
+        $response = $this->client->get(
+            $this->client->getApiUrl()->withPath("/checkout/v2/transactions/"),
+            array_merge_recursive(
+                $this->client->authenticateWithBearerToken(),
+                $guzzleOptions,
+            )
+        );
+
+        return Responses\Transaction::create($response);
     }
 }

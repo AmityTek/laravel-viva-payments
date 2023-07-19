@@ -1,11 +1,11 @@
 <?php
 
-namespace Sebdesign\VivaPayments;
+namespace AmityTek\VivaPayments;
 
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use Sebdesign\VivaPayments\Enums\Environment;
+use AmityTek\VivaPayments\Enums\Environment;
 
 class VivaPaymentsServiceProvider extends ServiceProvider implements DeferrableProvider
 {

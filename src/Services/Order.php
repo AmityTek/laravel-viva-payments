@@ -1,14 +1,14 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Services;
+namespace AmityTek\VivaPayments\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\UriInterface;
-use Sebdesign\VivaPayments\Client;
-use Sebdesign\VivaPayments\Requests;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Client;
+use AmityTek\VivaPayments\Requests;
+use AmityTek\VivaPayments\VivaException;
 
 class Order
 {

@@ -1,21 +1,21 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test\Unit\Services;
+namespace AmityTek\VivaPayments\Test\Unit\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Sebdesign\VivaPayments\Test\TestCase;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Test\TestCase;
+use AmityTek\VivaPayments\VivaException;
 
 /**
- * @covers \Sebdesign\VivaPayments\Client
- * @covers \Sebdesign\VivaPayments\Services\OAuth
+ * @covers \AmityTek\VivaPayments\Client
+ * @covers \AmityTek\VivaPayments\Services\OAuth
  */
 class OAuthTest extends TestCase
 {
     /**
      * @test
      * @group unit
-     * @covers \Sebdesign\VivaPayments\Responses\AccessToken
+     * @covers \AmityTek\VivaPayments\Responses\AccessToken
      *
      * @throws GuzzleException
      * @throws VivaException
@@ -47,7 +47,7 @@ class OAuthTest extends TestCase
     /**
      * @test
      * @group unit
-     * @covers \Sebdesign\VivaPayments\Responses\AccessToken
+     * @covers \AmityTek\VivaPayments\Responses\AccessToken
      *
      * @throws GuzzleException
      * @throws VivaException

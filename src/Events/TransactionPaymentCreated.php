@@ -1,9 +1,9 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Events;
+namespace AmityTek\VivaPayments\Events;
 
-use Sebdesign\VivaPayments\Enums\TransactionStatus;
-use Sebdesign\VivaPayments\Enums\TransactionType;
+use AmityTek\VivaPayments\Enums\TransactionStatus;
+use AmityTek\VivaPayments\Enums\TransactionType;
 
 /** @see https://developer.vivawallet.com/webhooks-for-payments/transaction-payment-created/ */
 class TransactionPaymentCreated

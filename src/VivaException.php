@@ -1,6 +1,6 @@
 <?php
 
-namespace Sebdesign\VivaPayments;
+namespace AmityTek\VivaPayments;
 
 use Exception;
 use Throwable;
