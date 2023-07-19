@@ -78,11 +78,11 @@ class Transaction
      * @throws GuzzleException
      * @throws VivaException
      */
-    public function retrieveAll(array $guzzleOptions = []): Responses\Transaction
+    public function retrieveAll($param, array $guzzleOptions = []): Responses\Transaction
     {
         /** @phpstan-var TransactionArray */
         $response = $this->client->get(
-            $this->client->getApiUrl()->withPath("/checkout/v2/transactions/"),
+            $this->client->getApiUrl()->withPath("/checkout/v2/transactions/$param"),
             array_merge_recursive(
                 $this->client->authenticateWithBearerToken(),
                 $guzzleOptions,
