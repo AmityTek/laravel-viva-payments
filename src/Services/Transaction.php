@@ -82,7 +82,7 @@ class Transaction
     {
         /** @phpstan-var TransactionArray */
         $response = $this->client->get(
-            $this->client->getApiUrl()->withPath("/checkout/v2/transactions/$param"),
+            $this->client->getApiUrl()->withPath("/api/transactions/$param"),
             array_merge_recursive(
                 $this->client->authenticateWithBearerToken(),
                 $guzzleOptions,
