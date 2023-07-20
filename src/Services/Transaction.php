@@ -92,11 +92,11 @@ class Transaction
         return Responses\Transaction::create($response);
     }
 
-    public function listSubscriptions(array $guzzleOptions = [])
+    public function callApiViva($url, array $guzzleOptions = [])
     {
         /** @phpstan-var TransactionArray */
         $response = $this->client->get(
-            'https://api.vivapayments.com/dataservices/v1/webhooks/subscriptions',
+            $url,
             array_merge_recursive(
                 $this->client->authenticateWithBearerToken(),
                 $guzzleOptions,
