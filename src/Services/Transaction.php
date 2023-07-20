@@ -67,43 +67,4 @@ class Transaction
         return Responses\RecurringTransaction::create($response);
     }
 
-
-    /**
-     * Retrieve transaction.
-     *
-     * @see https://developer.vivawallet.com/apis-for-payments/payment-api/#tag/Transactions/paths/~1checkout~1v2~1transactions~1{transactionId}/get
-     *
-     * @param  array<string,mixed>  $guzzleOptions  Additional parameters for the Guzzle client
-     *
-     * @throws GuzzleException
-     * @throws VivaException
-     */
-    public function retrieveAll($param, array $guzzleOptions = []): Responses\Transaction
-    {
-        /** @phpstan-var TransactionArray */
-        $response = $this->client->get(
-            $this->client->getApiUrl()->withPath("/checkout/v2/transactions/"),
-            array_merge_recursive(
-                $this->client->authenticateWithBearerToken(),
-                $guzzleOptions,
-            )
-        );
-
-        return Responses\Transaction::create($response);
-    }
-
-
-    public function callApiViva($url, array $guzzleOptions = [])
-    {
-        /** @phpstan-var TransactionArray */
-        $response = $this->client->get(
-            $url,
-            array_merge_recursive(
-                $this->client->authenticateWithBasicAuth(),
-                $guzzleOptions,
-            )
-        );
-
-        return $response;
-    }
 }

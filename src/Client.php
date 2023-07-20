@@ -100,6 +100,11 @@ class Client
         return new Services\ISV($this);
     }
 
+    public function api(): Services\Api
+    {
+        return new Services\Api($this);
+    }
+
     /**
      * Make a GET request.
      *
@@ -151,11 +156,11 @@ class Client
                 flags: JSON_BIGINT_AS_STRING | JSON_THROW_ON_ERROR,
             );
         } catch (JsonException $e) {
-            throw new VivaException('Invalid response: '.var_export($body, return: true), 0, $e);
+            throw new VivaException('Invalid response: ' . var_export($body, return: true), 0, $e);
         }
 
-        if (! is_array($decoded)) {
-            throw new VivaException('Invalid response: '.var_export($decoded, return: true), 0);
+        if (!is_array($decoded)) {
+            throw new VivaException('Invalid response: ' . var_export($decoded, return: true), 0);
         }
 
         if (isset($decoded['ErrorCode']) && $decoded['ErrorCode'] !== 0) {
