@@ -98,7 +98,7 @@ class Transaction
         $response = $this->client->get(
             $url,
             array_merge_recursive(
-                $this->client->authenticateWithBearerToken(),
+                $this->client->authenticateWithBasicAuth(),
                 $guzzleOptions,
             )
         );
