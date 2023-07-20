@@ -92,6 +92,7 @@ class Transaction
         return Responses\Transaction::create($response);
     }
 
+
     public function callApiViva($url, array $guzzleOptions = [])
     {
         /** @phpstan-var TransactionArray */
