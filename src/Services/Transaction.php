@@ -82,7 +82,7 @@ class Transaction
     {
         /** @phpstan-var TransactionArray */
         $response = $this->client->get(
-            $this->client->getApiUrl()->withPath("/api/transactions/$param"),
+            $this->client->getApiUrl()->withPath("/checkout/v2/transactions/"),
             array_merge_recursive(
                 $this->client->authenticateWithBearerToken(),
                 $guzzleOptions,
@@ -90,5 +90,19 @@ class Transaction
         );
 
         return Responses\Transaction::create($response);
+    }
+
+    public function listSubscriptions(array $guzzleOptions = [])
+    {
+        /** @phpstan-var TransactionArray */
+        $response = $this->client->get(
+            $this->client->getApiUrl()->withPath("/dataservices/v1/webhooks/subscriptions/"),
+            array_merge_recursive(
+                $this->client->authenticateWithBearerToken(),
+                $guzzleOptions,
+            )
+        );
+
+        return $response;
     }
 }
