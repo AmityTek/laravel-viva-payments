@@ -30,7 +30,7 @@ class RecurringTransaction
         public readonly mixed $IssuerMessageControl = null,
         public readonly mixed $Ctap = null,
         public readonly ?string $CartesBancaires = null,
-        public readonly mixed $ApplePosInfos = null,
+        public readonly mixed $ApplePosInfo = null,
         public readonly ?string $ServiceId,
     ) {
     }
