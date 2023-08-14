@@ -1,12 +1,12 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test\Unit;
+namespace AmityTek\VivaPayments\Test\Unit;
 
-use Sebdesign\VivaPayments\Client;
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Test\TestCase;
+use AmityTek\VivaPayments\Client;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Test\TestCase;
 
-/** @covers \Sebdesign\VivaPayments\Facades\Viva */
+/** @covers \AmityTek\VivaPayments\Facades\Viva */
 class VivaTest extends TestCase
 {
     /**

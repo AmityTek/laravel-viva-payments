@@ -1,11 +1,11 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Services;
+namespace AmityTek\VivaPayments\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Sebdesign\VivaPayments\Client;
-use Sebdesign\VivaPayments\Responses;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Client;
+use AmityTek\VivaPayments\Responses;
+use AmityTek\VivaPayments\VivaException;
 
 class Webhook
 {

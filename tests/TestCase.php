@@ -1,6 +1,6 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test;
+namespace AmityTek\VivaPayments\Test;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Handler\MockHandler;
@@ -9,9 +9,9 @@ use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Sebdesign\VivaPayments\Client;
-use Sebdesign\VivaPayments\Enums\Environment;
-use Sebdesign\VivaPayments\VivaPaymentsServiceProvider;
+use AmityTek\VivaPayments\Client;
+use AmityTek\VivaPayments\Enums\Environment;
+use AmityTek\VivaPayments\VivaPaymentsServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

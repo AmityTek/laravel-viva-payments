@@ -1,6 +1,6 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Requests;
+namespace AmityTek\VivaPayments\Requests;
 
 class CreatePaymentOrder
 {

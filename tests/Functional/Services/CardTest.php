@@ -1,14 +1,14 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test\Functional\Services;
+namespace AmityTek\VivaPayments\Test\Functional\Services;
 
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
-use Sebdesign\VivaPayments\Facades\Viva;
-use Sebdesign\VivaPayments\Test\TestCase;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Facades\Viva;
+use AmityTek\VivaPayments\Test\TestCase;
+use AmityTek\VivaPayments\VivaException;
 
-/** @covers \Sebdesign\VivaPayments\Services\Card */
+/** @covers \AmityTek\VivaPayments\Services\Card */
 class CardTest extends TestCase
 {
     /**

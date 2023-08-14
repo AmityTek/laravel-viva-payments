@@ -1,9 +1,9 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Responses;
+namespace AmityTek\VivaPayments\Responses;
 
-use Sebdesign\VivaPayments\Enums\TransactionStatus;
-use Sebdesign\VivaPayments\Enums\TransactionType;
+use AmityTek\VivaPayments\Enums\TransactionStatus;
+use AmityTek\VivaPayments\Enums\TransactionType;
 
 class RecurringTransaction
 {
@@ -30,7 +30,7 @@ class RecurringTransaction
         public readonly mixed $IssuerMessageControl = null,
         public readonly mixed $Ctap = null,
         public readonly ?string $CartesBancaires = null,
-        public readonly mixed $ApplePosInfo = null,
+        public readonly mixed $ApplePosInfos = null
     ) {
     }
 

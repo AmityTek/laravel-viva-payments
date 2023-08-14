@@ -1,6 +1,6 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Enums;
+namespace AmityTek\VivaPayments\Enums;
 
 enum TransactionType: int
 {

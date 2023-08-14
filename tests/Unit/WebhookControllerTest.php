@@ -1,19 +1,19 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Test\Unit;
+namespace AmityTek\VivaPayments\Test\Unit;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
-use Sebdesign\VivaPayments\Events\TransactionFailed;
-use Sebdesign\VivaPayments\Events\TransactionPaymentCreated;
-use Sebdesign\VivaPayments\Events\WebhookEvent;
-use Sebdesign\VivaPayments\Http\Controllers\WebhookController;
-use Sebdesign\VivaPayments\Services\Webhook;
-use Sebdesign\VivaPayments\Test\TestCase;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Events\TransactionFailed;
+use AmityTek\VivaPayments\Events\TransactionPaymentCreated;
+use AmityTek\VivaPayments\Events\WebhookEvent;
+use AmityTek\VivaPayments\Http\Controllers\WebhookController;
+use AmityTek\VivaPayments\Services\Webhook;
+use AmityTek\VivaPayments\Test\TestCase;
+use AmityTek\VivaPayments\VivaException;
 
-/** @covers \Sebdesign\VivaPayments\Http\Controllers\WebhookController */
+/** @covers \AmityTek\VivaPayments\Http\Controllers\WebhookController */
 class WebhookControllerTest extends TestCase
 {
     /**
@@ -40,7 +40,7 @@ class WebhookControllerTest extends TestCase
     /**
      * @test
      * @group unit
-     * @covers \Sebdesign\VivaPayments\Events\WebhookEvent
+     * @covers \AmityTek\VivaPayments\Events\WebhookEvent
      */
     public function it_handles_a_notification_event(): void
     {
@@ -62,7 +62,7 @@ class WebhookControllerTest extends TestCase
     /**
      * @test
      * @group unit
-     * @covers \Sebdesign\VivaPayments\Events\TransactionPaymentCreated
+     * @covers \AmityTek\VivaPayments\Events\TransactionPaymentCreated
      */
     public function it_handles_a_create_transaction_notification_event(): void
     {
@@ -85,7 +85,7 @@ class WebhookControllerTest extends TestCase
     /**
      * @test
      * @group unit
-     * @covers \Sebdesign\VivaPayments\Events\TransactionFailed
+     * @covers \AmityTek\VivaPayments\Events\TransactionFailed
      */
     public function it_handles_a_transaction_failed_notification_event(): void
     {

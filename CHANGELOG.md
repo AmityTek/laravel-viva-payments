@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `sebdesign/laravel-viva-payments` will be documented in this file.
+All notable changes to `AmityTek/laravel-viva-payments` will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -45,13 +45,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
--   Laravel 10.x Compatibility ([#30](https://github.com/sebdesign/laravel-viva-payments/issues/30))
+-   Laravel 10.x Compatibility ([#30](https://github.com/AmityTek/laravel-viva-payments/issues/30))
 
 ## [6.0.0-alpha.6] - 2022-12-30
 
 ### Fixed
 
--   Make `cardUniqueReference` nullable on transaction response ([#29](https://github.com/sebdesign/laravel-viva-payments/issues/29))
+-   Make `cardUniqueReference` nullable on transaction response ([#29](https://github.com/AmityTek/laravel-viva-payments/issues/29))
 
 ## [6.0.0-alpha.5] - 2022-11-30
 
@@ -63,7 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
--   Make `merchantTrns` nullable on transaction response ([#28](https://github.com/sebdesign/laravel-viva-payments/issues/28))
+-   Make `merchantTrns` nullable on transaction response ([#28](https://github.com/AmityTek/laravel-viva-payments/issues/28))
 
 ## [6.0.0-alpha.3] - 2022-11-18
 
@@ -114,7 +114,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [5.1.4] - 2021-05-28
 
--   Use POST instead of GET method in capturePreAuthTransaction API [#24](https://github.com/sebdesign/laravel-viva-payments/pull/24)
+-   Use POST instead of GET method in capturePreAuthTransaction API [#24](https://github.com/AmityTek/laravel-viva-payments/pull/24)
 
 ## [5.1.3] - 2021-02-19
 
@@ -126,7 +126,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [5.1.1] - 2020-09-29
 
--   Fix NativeCheckout::chargeTokenUsingCardToken [#18](https://github.com/sebdesign/laravel-viva-payments/issues/18)
+-   Fix NativeCheckout::chargeTokenUsingCardToken [#18](https://github.com/AmityTek/laravel-viva-payments/issues/18)
 
 ## [5.1.0] - 2020-09-07
 
@@ -146,7 +146,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.3.1] - 2020-07-15
 
--   Remove extraneous single quote ([#17](https://github.com/sebdesign/laravel-viva-payments/pull/17)) (thanks [@adrianblynch](https://github.com/adrianblynch))
+-   Remove extraneous single quote ([#17](https://github.com/AmityTek/laravel-viva-payments/pull/17)) (thanks [@adrianblynch](https://github.com/adrianblynch))
 
 ## [4.3.0] - 2020-07-08
 

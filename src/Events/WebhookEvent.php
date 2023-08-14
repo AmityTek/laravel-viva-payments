@@ -1,8 +1,8 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Events;
+namespace AmityTek\VivaPayments\Events;
 
-use Sebdesign\VivaPayments\Enums\WebhookEventType;
+use AmityTek\VivaPayments\Enums\WebhookEventType;
 
 /**
  * @template TEventData of object

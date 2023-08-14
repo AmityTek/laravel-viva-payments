@@ -1,13 +1,13 @@
 <?php
 
-namespace Sebdesign\VivaPayments\Services;
+namespace AmityTek\VivaPayments\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\RequestOptions;
-use Sebdesign\VivaPayments\Client;
-use Sebdesign\VivaPayments\Requests;
-use Sebdesign\VivaPayments\Responses;
-use Sebdesign\VivaPayments\VivaException;
+use AmityTek\VivaPayments\Client;
+use AmityTek\VivaPayments\Requests;
+use AmityTek\VivaPayments\Responses;
+use AmityTek\VivaPayments\VivaException;
 
 class Transaction
 {
@@ -66,4 +66,5 @@ class Transaction
 
         return Responses\RecurringTransaction::create($response);
     }
+
 }
